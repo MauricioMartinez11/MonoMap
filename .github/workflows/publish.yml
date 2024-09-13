@@ -1,30 +1,27 @@
 name: Docker Build & Publish
-
+ 
 on:
-  push:
+   push:
     branches:
       - main
-
+ 
 jobs:
     build-and-push:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
               uses: actions/checkout@v2
-
+ 
             - name: Login to Docker Hub
-              run: docker login -u "${{ secrets.DOCKER_USERNAME }}" -p "${{ secrets.DOCKER_PASSWORD }}"
-
+              run: docker login -u "${{ secrets.DOCKER_USERNAME }}" -p "${{secrets.DOCKER_PASSWORD}}"
+ 
             - name: Build Docker Image
-              run: docker build -t maupm11/incident_api:${{ github.sha }} .
-
+              run: docker build --no-cache -t maupm11/711-incident-api:${{ github.sha }} .
+ 
             - name: Tag Latest
-              run: docker tag maupm11/incident_api:${{ github.sha }} maupm11/incident_api:latest
-
-            - name: Tag Docker image
-              run: docker tag my-docker-image ${{ secrets.DOCKER_USERNAME }}/my-docker-image
-
-            - name: Push Docker image
-              run: | 
-                docker push maupm11/incident_api:${{ github.sha }} 
-                docker push maupm11/incident_api:latest
+              run: docker tag maupm11/711-incident-api:${{ github.sha }} maupm11/711-incident-api:latest
+ 
+            - name: Push Docker Image
+              run: |
+                docker push maupm11/711-incident-api:${{ github.sha }}
+                docker push maupm11/711-incident-api:latest
