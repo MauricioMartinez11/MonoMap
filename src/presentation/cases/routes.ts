@@ -7,8 +7,8 @@ export class CasesRoutes {
     const router = Router();
     const casesController = new CasesController();
     router.get("/", casesController.getCases);
-    router.post("/", casesController.getCaseById);
-    router.get("/:id", casesController.saveCase);
+    router.post("/", casesController.saveCase);
+    router.get("/:id", casesController.getCaseById);
     router.put("/:id", casesController.updateCaseById);
     router.delete("/:id", casesController.deleteCaseById);
     return router
