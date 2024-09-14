@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-    incident-api:
+    monomap:
       image: maupm11/monomap:latest
-      container_name: incident-api
+      container_name: monomap
       environment:
         PORT: ${PORT}
         MONGO_URL: ${MONGO_URL_DOCKER}

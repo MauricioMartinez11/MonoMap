@@ -19,9 +19,9 @@ jobs:
               run: docker build -t maupm11/monomap:${{ github.sha }} .
  
             - name: Tag Latest
-              run: docker tag maupm11/711-incident-api:${{ github.sha }} maupm11/711-incident-api:latest
+              run: docker tag maupm11/monomap:${{ github.sha }} maupm11/monomap:latest
  
             - name: Push Docker Image
               run: |
-                docker push maupm11/711-incident-api:${{ github.sha }}
-                docker push maupm11/711-incident-api:latest
+                docker push maupm11/monomap:${{ github.sha }}
+                docker push maupm11/monomap:latest
