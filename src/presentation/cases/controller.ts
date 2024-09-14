@@ -15,6 +15,7 @@ export class CasesController {
       });
       res.send(cases);
     } catch (error) {
+      console.error(error);
     }
   }
   public getCaseById = async (req: Request, res: Response) => {
