@@ -1,5 +1,5 @@
 
-export interface IIncident {
+export interface ICase {
   genre: string;
   age: number;
   lat: number;
@@ -7,6 +7,6 @@ export interface IIncident {
   isEmailSent: boolean;
 }
 
-export interface IIncidentDocument extends IIncident, Document {
+export interface ICaseDocument extends ICase, Document {
   
 }

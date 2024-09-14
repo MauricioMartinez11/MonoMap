@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 
-const incidentSchema = new mongoose.Schema({
+const casesSchema = new mongoose.Schema({
   creationDate: {
     type: Date,
     default: Date.now,
@@ -29,4 +29,4 @@ const incidentSchema = new mongoose.Schema({
   },
 });
 
-export const IncidentModel = mongoose.model('Incident', incidentSchema);
+export const CasesModel = mongoose.model('Cases', casesSchema);

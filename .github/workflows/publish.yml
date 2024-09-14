@@ -16,7 +16,7 @@ jobs:
               run: docker login -u "${{ secrets.DOCKER_USERNAME }}" -p "${{secrets.DOCKER_PASSWORD}}"
  
             - name: Build Docker Image
-              run: docker build --no-cache -t maupm11/711-incident-api:${{ github.sha }} .
+              run: docker build -t maupm11/monomap:${{ github.sha }} .
  
             - name: Tag Latest
               run: docker tag maupm11/711-incident-api:${{ github.sha }} maupm11/711-incident-api:latest
